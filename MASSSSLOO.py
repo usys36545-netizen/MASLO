@@ -25,6 +25,9 @@ class App(QWidget):
         # Если выбран 'Рис' (индекс 3), изменяем текст label
         if index == 3:  # 'Рис' находится на 4-й позиции (индекс 3)
             self.o.label.setText('это тестовый текст если вы его видите при конечном (релизом) приложении то сообщите разработчику')
+            font = self.o.label.font()
+            font.setPointSize(20)
+            self.o.label.setFont(font)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
