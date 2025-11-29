@@ -33,55 +33,6 @@ class App(QWidget):
             font.setPointSize(20)
             self.o.label.setFont(font)
 
-    def toggle_dark_mode(self):
-        if self.o.checkBox.isChecked():
-            # Установка темного режима
-            self.set_dark_mode()
-        else:
-            # Установка светлого режима
-            self.set_light_mode()
-
-    def set_dark_mode(self):
-        # Установка темного режима
-        dark_style = """
-        QWidget {
-            background-color: #2e2e2e;
-            color: #ffffff;
-        }
-        QComboBox {
-            background-color: #3e3e3e;
-            color: #ffffff;
-            border: 1px solid #5e5e5e;
-        }
-        QCheckBox {
-            color: #ffffff;
-        }
-        QLabel {
-            color: #ffffff;
-        }
-        """
-        self.o.setStyleSheet(dark_style)
-
-    def set_light_mode(self):
-        # Установка светлого режима
-        light_style = """
-        QWidget {
-            background-color: #f0f0f0;
-            color: #000000;
-        }
-        QComboBox {
-            background-color: #ffffff;
-            color: #000000;
-            border: 1px solid #c0c0c0;
-        }
-        QCheckBox {
-            color: #000000;
-        }
-        QLabel {
-            color: #000000;
-        }
-        """
-        self.o.setStyleSheet(light_style)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
