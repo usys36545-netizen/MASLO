@@ -17,7 +17,7 @@ class App(QWidget):
         if index == 0:  # 'Начало' находится на 1-й позиции (индекс 0)
             self.o.label.setText('Добро пожаловать!\nЭто приложение создано для тех, кто\nтолько начинает свой путь на кухне — или хочет\nосвежить базовые навыки. Здесь вы найдёте понятные\nинструкции, полезные советы и пошаговые рецепты.\nУдачи и приятного аппетита!')
             font = self.o.label.font()
-            font.setPointSize(29)
+            font.setPointSize(28)
             self.o.label.setFont(font)
 
         # Если выбран 'Рис' (индекс 3), изменяем текст label
@@ -30,4 +30,5 @@ class App(QWidget):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     ex = App()
+
     sys.exit(app.exec_())
