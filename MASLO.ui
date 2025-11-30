@@ -153,7 +153,7 @@
     <number>0</number>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:28pt;&quot;&gt;Добро пожаловать!&lt;/span&gt;&lt;span style=&quot; font-size:28pt;&quot;&gt;&lt;br/&gt;Это приложение создано для тех, кто&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:28pt;&quot;&gt;только начинает свой путь на кухне — или хочет&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:28pt;&quot;&gt;освежить базовые навыки. Здесь вы найдёте понятные&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:28pt;&quot;&gt;инструкции, полезные советы и пошаговые рецепты. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:28pt;&quot;&gt;Удачи и приятного аппетита!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:28pt; font-weight:600;&quot;&gt;Добро пожаловать!&lt;/span&gt;&lt;span style=&quot; font-size:28pt;&quot;&gt;&lt;br/&gt;Это приложение создано для тех, кто&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:28pt;&quot;&gt;только начинает свой путь на кухне — или хочет&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:28pt;&quot;&gt;освежить базовые навыки. Здесь вы найдёте понятные&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:28pt;&quot;&gt;инструкции, полезные советы и пошаговые рецепты. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:28pt;&quot;&gt;Удачи и приятного аппетита!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
  </widget>
