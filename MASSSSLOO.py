@@ -1,20 +1,41 @@
-from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QWidget
-import sys
+# Импортируем необходимые модули из PyQt5
+from PyQt5 import uic  # Для загрузки .ui файлов, созданных в Qt Designer
+from PyQt5.QtWidgets import QApplication, QWidget  # Основные классы для создания GUI
+import sys  # Для работы с аргументами командной строки и завершения программы
+
+
 class App(QWidget):
+    """Основной класс приложения, наследуемый от QWidget."""
+
     def __init__(self):
-        super().__init__()
-        self.start()
-        self.ComboBox()
+        """Инициализация главного окна приложения."""
+        super().__init__()  # Вызываем конструктор родительского класса
+        self.start()        # Загружаем и отображаем UI
+        self.ComboBox()     # Настраиваем взаимодействие с элементами интерфейса
+
     def start(self):
-        self.o = uic.loadUi('MASLO.ui')
-        self.o.show()
+        """Загружает интерфейс из файла MASLO.ui и отображает его."""
+        self.o = uic.loadUi('MASLO.ui')  # Загружаем UI-файл, созданный в Qt Designer
+        self.o.show()                    # Отображаем окно
+
     def ComboBox(self):
-        # Подключаем сигнал activated к обработчику
+        """Настраивает обработчики сигналов для элементов интерфейса."""
+        # Подключаем сигнал активации (выбора элемента) в выпадающем списке к обработчику
         self.o.comboBox.activated.connect(self.on_combo_activated)
+
+        # Подключаем сигнал переключения чекбокса (темный режим) к обработчику
+        self.o.checkBox.toggled.connect(self.toggle_dark_mode)
+
+        # Флаг для отслеживания текущего состояния темы (светлая/тёмная)
+        self.is_dark_mode = False
+
     def on_combo_activated(self, index):
-        # Если выбран 'Начало' (индекс 0), изменяем текст label
-        if index == 0:  # 'Начало' находится на 1-й позиции (индекс 0)
+        """
+        Обработчик выбора элемента в comboBox.
+        В зависимости от выбранного индекса обновляет текст и шрифт label.
+        """
+        # 'Начало' — индекс 0
+        if index == 0:
             self.o.label.setText(
                 '<b>Добро пожаловать!</b><br>'
                 'Это приложение создано для тех, кто<br>'
@@ -23,60 +44,103 @@ class App(QWidget):
                 'инструкции, полезные советы и пошаговые рецепты.<br>'
                 'Удачи и приятного аппетита!'
             )
-            font = self.o.label.font() # Делаем шрифт 28
-            font.setPointSize(28)
+            font = self.o.label.font()
+            font.setPointSize(28)      # Устанавливаем крупный шрифт для приветствия
             self.o.label.setFont(font)
 
-        # Если выбран 'Инвентарь' (индекс 1), изменяем текст label
-        if index == 1: # 'Инвентарь' находится на 2-й позиции (индекс 1)
-            self.o.label.setText(f'Это тестовый текст если вы его видите при конечном (релизом)\nприложении то сообщите разработчику "Инвентарь"')
-            font = self.o.label.font() # Делаем шрифт 20
+        # 'Инвентарь' — индекс 1
+        elif index == 1:
+            self.o.label.setText('Это тестовый текст если вы его видите при конечном (релизом)\nприложении то сообщите разработчику "Инвентарь"')
+            font = self.o.label.font()
             font.setPointSize(20)
             self.o.label.setFont(font)
 
-        # Если выбран 'Пельмени' (индекс 2), изменяем текст label
-        if index == 2:  # 'Пельмени' находится на 3-й позиции (индекс 2)
-            self.o.label.setText(f'Это тестовый текст если вы его видите при конечном (релизом)\nприложении то сообщите разработчику "Пельмени"')
-            font = self.o.label.font() # Делаем шрифт 20
+        # 'Пельмени' — индекс 2
+        elif index == 2:
+            self.o.label.setText('Это тестовый текст если вы его видите при конечном (релизом)\nприложении то сообщите разработчику "Пельмени"')
+            font = self.o.label.font()
             font.setPointSize(20)
             self.o.label.setFont(font)
 
-        # Если выбран 'Рис' (индекс 3), изменяем текст label
-        if index == 3:  # 'Рис' находится на 4-й позиции (индекс 3)
-            self.o.label.setText(f'Это тестовый текст если вы его видите при конечном (релизом)\nприложении то сообщите разработчику "РИС"')
-            font = self.o.label.font() # Делаем шрифт 20
+        # 'Рис' — индекс 3
+        elif index == 3:
+            self.o.label.setText('Это тестовый текст если вы его видите при конечном (релизом)\nприложении то сообщите разработчику "РИС"')
+            font = self.o.label.font()
             font.setPointSize(20)
             self.o.label.setFont(font)
 
-        # Если выбран 'Макароны' (индекс 4), изменяем текст label
-        if index == 4:  # 'Рис' находится на 5-й позиции (индекс 4)
-            self.o.label.setText(f'Это тестовый текст если вы его видите при конечном (релизом)\nприложении то сообщите разработчику "Макароны"')
-            font = self.o.label.font() # Делаем шрифт 20
+        # 'Макароны' — индекс 4
+        elif index == 4:
+            self.o.label.setText('Это тестовый текст если вы его видите при конечном (релизом)\nприложении то сообщите разработчику "Макароны"')
+            font = self.o.label.font()
             font.setPointSize(20)
             self.o.label.setFont(font)
 
-        # Если выбран 'Греча' (индекс 5), изменяем текст label
-        if index == 5:  # 'Рис' находится на 6-й позиции (индекс 5)
-            self.o.label.setText(f'Это тестовый текст если вы его видите при конечном (релизом)\nприложении то сообщите разработчику "Греча"')
-            font = self.o.label.font() # Делаем шрифт 20
+        # 'Греча' — индекс 5
+        elif index == 5:
+            self.o.label.setText('Это тестовый текст если вы его видите при конечном (релизом)\nприложении то сообщите разработчику "Греча"')
+            font = self.o.label.font()
             font.setPointSize(20)
             self.o.label.setFont(font)
 
-        # Если выбран 'Яички' (индекс 6), изменяем текст label
-        if index == 6:  # 'Рис' находится на 5-й позиции (индекс 6)
-            self.o.label.setText(f'Это тестовый текст если вы его видите при конечном (релизом)\nприложении то сообщите разработчику "Яички"')
-            font = self.o.label.font() # Делаем шрифт 20
+        # 'Яички' — индекс 6
+        elif index == 6:
+            self.o.label.setText('Это тестовый текст если вы его видите при конечном (релизом)\nприложении то сообщите разработчику "Яички"')
+            font = self.o.label.font()
             font.setPointSize(20)
             self.o.label.setFont(font)
 
-        # Если выбран 'Глазунья' (индекс 7), изменяем текст label
-        if index == 7:  # 'Рис' находится на 6-й позиции (индекс 7)
-            self.o.label.setText(f'Это тестовый текст если вы его видите при конечном (релизом)\nприложении то сообщите разработчику "Глазунья"')
-            font = self.o.label.font() # Делаем шрифт 20
+        # 'Глазунья' — индекс 7
+        elif index == 7:
+            self.o.label.setText('Это тестовый текст если вы его видите при конечном (релизом)\nприложении то сообщите разработчику "Глазунья"')
+            font = self.o.label.font()
             font.setPointSize(20)
             self.o.label.setFont(font)
 
+        # Примечание: в будущем можно вынести тексты в словарь или отдельный файл,
+        # чтобы упростить расширение и поддержку.
+
+    def toggle_dark_mode(self, checked):
+        """
+        Обработчик переключения темного режима.
+        Применяет пользовательский стиль (stylesheet) в зависимости от состояния чекбокса.
+        """
+        self.is_dark_mode = checked  # Сохраняем текущее состояние
+
+        if checked:
+            # Задаём тёмную тему с помощью CSS-подобного стиля
+            dark_stylesheet = """
+            QDialog {
+                background-color: #2b2b2b;
+                color: #ffffff;
+            }
+            QLabel {
+                color: #ffffff;
+                background-color: #2b2b2b;
+            }
+            QComboBox {
+                background-color: #3c3c3c;
+                color: #ffffff;
+                border: 1px solid #555555;
+                padding: 5px;
+            }
+            QComboBox QAbstractItemView {
+                background-color: #3c3c3c;
+                color: #ffffff;
+                selection-background-color: #555555;
+            }
+            QCheckBox {
+                color: #ffffff;
+            }
+            """
+            self.o.setStyleSheet(dark_stylesheet)
+        else:
+            # Сбрасываем стиль, возвращаясь к системной (светлой) теме
+            self.o.setStyleSheet("")
+
+
+# Точка входа в приложение
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    ex = App()
-    sys.exit(app.exec_())
+    app = QApplication(sys.argv)  # Создаём экземпляр QApplication
+    ex = App()                    # Создаём и инициализируем главное окно
+    sys.exit(app.exec_())         # Запускаем главный цикл обработки событий
