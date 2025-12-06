@@ -14,46 +14,32 @@ venv/
 *.tmp
 *.swp
 
-# Editors
-.vscode/
-.idea/
-
 # Environment
 .env
 .env.local
 *.env.*
 
-# Distribution / build artifacts
-dist/
-build/
-target/
-*.egg-info/
-
-# Python specific
-*.pyo
-*.pyd
-.Python
-*.so
-*.egg
+# Editors
+.vscode/
+.idea/
 
 # Coverage
-.coverage
 coverage/
 htmlcov/
+.coverage
 
 # MyPy
 .mypy_cache/
-.dmypy.json
-dmypy.json
 
-# PyTest
+# Pytest
 .pytest_cache/
 
-# UI files (if generated)
-*.ui~
+# Distribution
+dist/
+build/
+target/
 
-# Backup files
-*~
-*.bak
-*.swp
+# System
+.DS_Store
+Thumbs.db
 ```
