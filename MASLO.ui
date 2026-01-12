@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1024</width>
-    <height>581</height>
+    <width>1055</width>
+    <height>602</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -113,7 +113,7 @@
   <widget class="QCheckBox" name="checkBox">
    <property name="geometry">
     <rect>
-     <x>930</x>
+     <x>960</x>
      <y>0</y>
      <width>96</width>
      <height>17</height>
@@ -127,9 +127,9 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>60</y>
-     <width>1001</width>
-     <height>461</height>
+     <y>50</y>
+     <width>1031</width>
+     <height>561</height>
     </rect>
    </property>
    <property name="toolTipDuration">
