@@ -51,7 +51,7 @@ class App(QWidget):
         # 'Инвентарь' — индекс 1
         elif index == 1:
             self.o.label.setText(
-                'Это тестовый текст если вы его видите при конечном (релизом)\nприложении то сообщите разработчику "Инвентарь"')
+                'Вода\nКастрюлька\nЛюбая чистая посуда, чтобы положить ваш шедевр\nДуршлак для макарон\n')
             font = self.o.label.font()
             font.setPointSize(20)
             self.o.label.setFont(font)
@@ -219,3 +219,4 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)  # Создаём экземпляр QApplication
     ex = App()  # Создаём и инициализируем главное окно
     sys.exit(app.exec_())  # Запускаем главный цикл обработки событий
+
