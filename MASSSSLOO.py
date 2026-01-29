@@ -158,6 +158,8 @@ class App(QWidget):
 
 # Точка входа в приложение
 if __name__ == "__main__":
+    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling, True)
+    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps, True)
     app = QApplication(sys.argv)  # Создаём экземпляр QApplication
     ex = App()  # Создаём и инициализируем главное окно
     sys.exit(app.exec_())  # Запускаем главный цикл обработки событий
