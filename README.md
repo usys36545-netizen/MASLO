@@ -14,7 +14,7 @@
 
 ## 3. Как запустить у себя
 
- 1 Скачать по ссылке инсталер и запустить установку https://drive.google.com/uc?export=download&id=16nUVoEY5Wiss1IWGF1XQMbCbZkYwXBdk
+ 1 Скачать по ссылке инсталер и запустить установку https://drive.google.com/uc?export=download&id=1dAbSOGYAhIBul-4cx0RcQyme_z6SBK-v
 
  2 Для запуска приложения на вашем компьютере выполните следующие шаги:
 
